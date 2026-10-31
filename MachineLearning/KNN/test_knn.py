@@ -16,11 +16,13 @@ plt.figure()
 plt.scatter(X[:,2], X[:,3], c=y, cmap=cmap, edgecolor='k', s=20)
 #plt.show()
 
-clf = KNN(k=3)
+selected_k = 5
+clf = KNN(selected_k)
 clf.fit(X_train, y_train)
 predictions = clf.predict(X_test)
 
 print ("Predictions:", predictions)
 
+print ("k = " + str(selected_k))
 accuracy = np.sum(predictions == y_test) / len(y_test)
 print ("Accuracy:", accuracy)
