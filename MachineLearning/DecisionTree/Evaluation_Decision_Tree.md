@@ -224,15 +224,3 @@ The other difference worth noting is that I did not scale anything here. Breast
 cancer has features ranging from fractal dimensions around 0.003 to areas in the
 thousands, which would have wrecked a distance based model like kNN. A tree
 compares one feature to one threshold at a time, so the units never interact.
-
-## Next
-
-- Seed the random choice so results are reproducible before running any more
-  sweeps.
-- Report train and test accuracy together as standard, since the gap was more
-  informative than either number alone.
-- Add a confusion matrix. With 45 malignant and 69 benign in the test set, I
-  should know which direction the errors fall in, since a missed malignant case
-  matters more than a false alarm.
-- Sweep `min_samples_split`, which unlike `max_depth` keeps having an effect once
-  the tree stops growing naturally.
